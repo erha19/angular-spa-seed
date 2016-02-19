@@ -51,14 +51,11 @@ gulp.task('clean', function () {
 
 /******编译之前将scss注入index.scss  start ************/
 gulp.task('inject_sass',function () {
-	//1,将所有scss文件注入到index.scss
 	var injectFiles = gulp.src([
 			path.join(config.paths.src,'app/**/*.scss'),
 			path.join('!'+ config.paths.src, 'app/index.scss')
 		],{read:false});
-	/**
-	 * 参考API:https://github.com/klei/gulp-inject#optionsstarttag
-	 */
+
 	var injectOptions = {
 	  transform: function(filePath) {
 	    filePath = filePath.replace(config.paths.src + '/app/', '');
@@ -75,6 +72,9 @@ gulp.task('inject_sass',function () {
 });
 /******编译之前将scss注入index.scss   end ************/
 
+gulp.task('clean', function () {
+  $.del([path.join(config.paths.dist, '/'), path.join(config.paths.tmp, '/')]);
+});
 
 /*****************CSS(COMPASS编译) start*********************************************/
 gulp.task('styles:compass',['inject_sass'],function () {
@@ -101,7 +101,6 @@ gulp.task('inject', ['jshint', 'styles:compass'], function () {
   ], { read: false });
 
   var injectScripts = gulp.src([
-    path.join(config.paths.src, '/app/**/*.module.js'),
     path.join(config.paths.src, '/app/**/*.js'),
     path.join('!' + config.paths.src, '/app/**/*.spec.js'),
     path.join('!' + config.paths.src, '/app/**/*.mock.js')
