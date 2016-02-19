@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "version": "0.0.0",
+  "authors": [
+    "simplefatty <simplefatty@rippletec.net>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#~2.1.8"
+  },
+  "overrides": {
+    "semantic": {
+      "main": ["dist/components/ad.css","dist/components/button.css","dist/semantic.js"]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+	"semantic": {
+		"main": [
+			"./dist/components/popup.min.js",
+			"./dist/components/input.css"
+		]
+	},
+	"jquery":{
+		"main":[
+			"./dist/jquery.min.js"
+		]
+	}
+}
