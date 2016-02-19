@@ -20,8 +20,8 @@
     "semantic": "semantic-ui#~2.1.8"
   },
   "overrides": {
-    "semantic": {
-      "main": ["dist/components/ad.css","dist/components/button.css","dist/semantic.js"]
+    "jquery": {
+      "main": ["dist/jquery.min.js"]
     }
   }
 }
