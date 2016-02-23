@@ -51,7 +51,7 @@ gulp.task('html',['inject','partials'],function () {
 		//js
 		.pipe($.useref())
 		.pipe(jsFilter)
-		.pipe($.scriptDebug())
+		.pipe($.stripDebug())
 		.pipe($.uglify())
 		.pipe(jsFilter.restore)
 		//css 
