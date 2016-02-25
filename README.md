@@ -6,7 +6,7 @@
 
 `git clone https://github.com/simplefatty/angular-spa-seed.git`
 
-`cd cf-shop-system`
+`cd angular-spa-seed`
 
 运行`npm install`安装运行依赖
 
