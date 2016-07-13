@@ -1,14 +1,14 @@
 'use strict';
 
-var gulp = require('gulp');
-var fs = require('fs');
+let gulp = require('gulp'),
+	fs = require('fs');
 
-fs.readdirSync('./gulp').forEach(function (file) {
+fs.readdirSync('./gulp').forEach(file=>{
 	if((/\.(js|coffee)$/i).test(file)){
 		require('./gulp/' + file);
 	}
 });
 
-gulp.task('default', ['clean'], function () {
+gulp.task('default', ['clean'],()=> {
   gulp.start('build');
 });

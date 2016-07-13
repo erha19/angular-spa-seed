@@ -1,36 +1,57 @@
+/*
+ * Copyright (c) 2016, simplefatty
+ * Licensed under the MIT License.
+ */
+
 'use strict';
 
-var gutil = require('gulp-util');
+let gutil = require('gulp-util'),
+  bower_path = 'bower_components';
 
 exports.paths = {
-  src:  'src',
+  bower_path: bower_path,
+  src: 'src',
   dist: 'dist',
-  tmp:  '.tmp',
-  e2e:  'test_e2e',
-  env:{
+  tmp: '.tmp',
+  env: {
 
   }
 };
+/*
+ * @description 依赖配置
+ */
+exports.vendor = {
+  // 程序启动依赖模块
+  base: {
+    source: require('../vendor.base.json'),
+    dest: 'src/app',
+    name: 'vendor'
+  },
 
-exports.modules={
-  ConstantModuleName:'app',
-  templateModuleName:'app.tmp'
+  // 按需加载模块
+  app: {
+    source: require('../vendor.json'),
+    dest: 'src/vendor'
+  }
+};
+exports.modules = {
+    ConstantModuleName: 'app',
+    templateModuleName: 'app.tmp'
 }
-/**
- * 用于wiredep获取bower依赖主要JS文件列表的options
+/*
+ * @description 用于wiredep获取bower依赖主要JS文件列表的options
+ * option:https://github.com/taptapship/wiredep
  */
 exports.wiredep = {
-  exclude: [/bootstrap.js$/, /bootstrap-sass-official\/.*\.js/, /bootstrap\.css/],
-  directory: 'bower_components'
+  directory: bower_path
 };
 
-/**
- *  错误处理
+/*
+ * @description 错误处理
  */
 exports.errorHandler = function() {
-  return function (err) {
+  return function(err) {
     gutil.beep();
     gutil.log(err.toString());
   }
 };
-

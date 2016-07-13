@@ -1,7 +1,7 @@
 (function () { 
- return angular.module('app')
-.constant('ServerUrl', "http://localhost:9000")
-.constant('IsDebug', true)
-.constant('CookieConfig', {"domain":""});
+ return angular.module("app")
+.constant("ServerUrl", "")
+.constant("IsDebug", false)
+.constant("CookieConfig", {"domain":""});
 
 })();

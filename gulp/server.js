@@ -1,16 +1,16 @@
+/*
+ * Copyright (c) 2016, simplefatty
+ * Licensed under the MIT License.
+ */
+
 'use strict';
 
-var gulp = require('gulp'),
+let gulp = require('gulp'),
 	config = require('./config'),
 	path = require('path'),
 	browserSync = require('browser-sync'),
-	//var proxyMiddleware = require('http-proxy-middleware'),
+	//proxyMiddleware = require('http-proxy-middleware'),
 	browserSyncSpa = require('browser-sync-spa'),
-	//var bs = browserSync.create(),
-	/**
-	 * https://www.npmjs.com/package/gulp-sequence
-	 * @type {[type]}
-	 */
 	gulpSequence = require('gulp-sequence');
 
 //watch list
@@ -43,7 +43,7 @@ gulp.task('watch', ['inject'], function() {
 });
 
 
-function browserSyncInit(baseDir, open, port) {
+let browserSyncInit = (baseDir, open, port) => {
 	// Only needed for angular apps,angular 正确路由需要
 	browserSync.use(browserSyncSpa({
 		selector: '[ng-app]'
@@ -55,7 +55,7 @@ function browserSyncInit(baseDir, open, port) {
 		server: {
 			baseDir: baseDir,
 			routes: {
-				"/bower_components": "bower_components"
+				"/bower_components": config.paths.bower_path
 			},
 			//使用代理
 			//  middleware:[

@@ -16,12 +16,9 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "semantic": "semantic-ui#~2.1.8"
-  },
-  "overrides": {
-    "jquery": {
-      "main": ["dist/jquery.min.js"]
-    }
+  "dependencies": {},
+  "overrides": {},
+  "devDependencies": {
+    "angular": "^1.5.7"
   }
 }

@@ -10,7 +10,7 @@
     "ServerUrl": "",
     "IsDebug":false,
     "CookieConfig":{
-      "domain":".jackhu.top"
+      "domain":""
     }
   },
   "test": {
