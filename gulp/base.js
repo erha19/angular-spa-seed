@@ -62,12 +62,6 @@ gulp.task('clean', ()=> {
 	$.del([path.join(config.paths.dist, '/'), path.join(config.paths.tmp, '/')]);
 });
 
-
-
-gulp.task('clean', ()=> {
-	$.del([path.join(config.paths.dist, '/'), path.join(config.paths.tmp, '/')]);
-});
-
 /**
  * @description SASS预编译模块,依赖compass模块编译
  */
