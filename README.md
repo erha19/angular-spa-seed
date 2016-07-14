@@ -18,6 +18,13 @@
 
 `npm run build` --编译模式（将项目文件输出为上线文件）
 
+## Issue
+
+* `npm install`过程可能比较漫长，没有翻墙工具的同学建议切换国内`taobao,cnpm`等源或者使用`nrm`
+* 项目依赖`sass-compress`,需要C++编译库，简单的方式直接安装一个VS，或者手动去掉sass编译，具体配置在`/gulp/base.js`内，可以改用`gulp-less`
+* `npm install`过程出现其他异常请尝试更新node版本或执行`npm update npm -g`
+* gulp文件执行需要在`node --harmony`模式执行,可在`git base`中设置`alias node = "node --harmony"`设置默认执行
+
 ### Gulp
 
 目录结构
