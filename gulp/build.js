@@ -8,7 +8,6 @@ let gulp = require('gulp'),
 	path = require('path'),
 	config = require('./config'),
 	_ = require('lodash'),
-	wiredep = require('wiredep').stream,
 	$ = require('gulp-load-plugins')({
 		pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del', 'imagemin-pngquant']
 	});

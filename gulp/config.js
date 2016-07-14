@@ -38,13 +38,6 @@ exports.modules = {
     ConstantModuleName: 'app',
     templateModuleName: 'app.tmp'
 }
-/*
- * @description 用于wiredep获取bower依赖主要JS文件列表的options
- * option:https://github.com/taptapship/wiredep
- */
-exports.wiredep = {
-  directory: bower_path
-};
 
 /*
  * @description 错误处理

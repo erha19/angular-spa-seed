@@ -48,7 +48,6 @@
         "imagemin-pngquant": "^4.2.0",
         "jshint": "^2.9.1",
         "lodash": "^4.3.0",
-        "wiredep": "^2.2.2",
         "gulp-concat": "^2.6.0",
         "gulp-expect-file": "0.0.7",
         "gulp-filter": "^3.0.1",

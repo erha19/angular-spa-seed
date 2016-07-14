@@ -10,7 +10,6 @@ let gulp = require('gulp'),
 	fs = require('fs'),
 	config = require('./config'),
 	_ = require('lodash'),
-	wiredep = require('wiredep').stream,
 	$ = require('gulp-load-plugins')({
 		pattern: ['gulp-*', 'event-stream', 'main-bower-files', 'uglify-save-license', 'del']
 	}),
@@ -106,7 +105,6 @@ gulp.task('inject_sass', ()=> {
 	};
 	return gulp.src(path.join(config.paths.src, 'app/index.scss'))
 		.pipe($.inject(injectFiles, injectOptions))
-		.pipe(wiredep(_.assign({}, config.wiredep)))
 		.pipe(gulp.dest(path.join(config.paths.src, 'app/')))
 });
 
