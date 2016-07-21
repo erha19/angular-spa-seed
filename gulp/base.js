@@ -83,6 +83,22 @@ gulp.task('styles:compass', ['inject_sass'], ()=> {
 });
 
 /**
+ * @description 也可以使用gulp-sass
+ */
+gulp.task('styles:sass', ['inject_sass'], ()=> {
+	return gulp.src(path.join(config.paths.src, 'app/index.scss'))
+		.pipe($.plumber(config.errorHandler()))
+		.pipe($.sass())
+		.pipe(gulp.dest(path.join(config.paths.tmp, '/serve/app/')))
+		//css改变时无刷新改变页面
+		.pipe(reload({
+			stream: true
+		}));
+});
+
+
+
+/**
  * @description 编译之前将scss注入index.scss
  */
 
