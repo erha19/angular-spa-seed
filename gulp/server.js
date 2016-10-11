@@ -20,7 +20,7 @@ gulp.task('watch', ['inject'], function() {
 	//监控CSS文件
 	gulp.watch([path.join(config.paths.src, '/app/**/*.scss')], function(event) {
 		if (event.type === 'changed') {
-			gulp.start('styles:compass');
+			gulp.start('styles:sass');
 		} else {
 			gulp.start('inject');
 		}

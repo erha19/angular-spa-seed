@@ -90,6 +90,9 @@ gulp.task('styles:sass', ['inject_sass'], ()=> {
 		.pipe($.plumber(config.errorHandler()))
 		.pipe($.sass())
 		.pipe(gulp.dest(path.join(config.paths.tmp, '/serve/app/')))
+		//sprite图片路径修复
+		.pipe($.replace('../../../src/assets/images/', '../assets/images/'))
+		.pipe(gulp.dest(path.join(config.paths.tmp, '/serve/app/')))
 		//css改变时无刷新改变页面
 		.pipe(reload({
 			stream: true
@@ -128,7 +131,7 @@ gulp.task('inject_sass', ()=> {
  * @description Html中的CSS以及JS注入
  */
 
-gulp.task('inject', ['jshint', 'styles:compass', 'vendor:base'], ()=> {
+gulp.task('inject', ['jshint', 'styles:sass', 'vendor:base'], ()=> {
 	let injectStyles = gulp.src([
 		path.join(config.paths.tmp, '/serve/app/**/*.css')
 	], {
